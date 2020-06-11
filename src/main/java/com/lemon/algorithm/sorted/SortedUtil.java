@@ -10,12 +10,12 @@ import java.util.List;
  */
 public class SortedUtil {
 
-    public static boolean less(Comparable num1, Comparable num2) {
+    public static boolean less(Integer num1, Integer num2) {
         return num1.compareTo(num2) < 0;
     }
 
-    public static void swap(List<Comparable> list, int index1, int index2) {
-        Comparable temp = list.get(index1);
+    public static void swap(List<Integer> list, int index1, int index2) {
+        Integer temp = list.get(index1);
         list.set(index1, list.get(index2));
         list.set(index2, temp);
     }
