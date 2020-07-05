@@ -14,10 +14,12 @@ import com.lemon.algorithm.utils.PrintUtil;
 public class QuickSorted {
 
     public static void sorted(List<Integer> list, int begin, int end) {
-        if(begin >= end) return;
+        if (begin >= end) {
+            return;
+        }
         int index = partition(list, begin, end);
-        sorted(list, begin, index-1);
-        sorted(list, index+1, end);
+        sorted(list, begin, index - 1);
+        sorted(list, index + 1, end);
     }
 
     public static int partition(List<Integer> list, int begin, int end) {
@@ -25,14 +27,20 @@ public class QuickSorted {
         int j = end + 1;
         Integer value = list.get(begin);
 
-        while(true) {
-            while(SortedUtil.less(list.get(++i), value)) {
-                if(i == end) break;
+        while (true) {
+            while (SortedUtil.less(list.get(++i), value)) {
+                if (i == end) {
+                    break;
+                }
             }
-            while(SortedUtil.less(value, list.get(--j))) {
-                if(j == begin) break;
+            while (SortedUtil.less(value, list.get(--j))) {
+                if (j == begin) {
+                    break;
+                }
             }
-            if(i >= j) break;
+            if (i >= j) {
+                break;
+            }
             SortedUtil.swap(list, i, j);
         }
         SortedUtil.swap(list, begin, j);
